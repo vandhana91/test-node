@@ -20,7 +20,7 @@ fs.readdirSync(folderPath).forEach(file => {
   });
   app.get('/', function(req, res) {
     
-    res.sendFile( path.resolve('2022-3-15-1650004935225.txt') );
+    res.sendFile( path.resolve(filename) );
     //res.sendFile(path.resolve(__dirname,'./assignment'));
  });
 
