@@ -1,16 +1,30 @@
-const express = require('express');
+const fs= require("fs");
+const path = require('path');
+const express = require('express')
 const app = express();
- 
-app.get('/', (req, res) => {
-  res
-    .status(200)
-    .send('Hello server is running')
-    .end();
-});
- 
-// Start the server
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
-});
+const port = 8080;
+
+const folderPath = './assignment/';
+const dateObj = new Date()//.toString();
+  console.log(dateObj);
+  let d = new Date();
+  let filename = "assignment/" + d.getFullYear() + "-"+ d.getMonth() + "-" + d.getDate() + "-"
+  + d.getTime() +'.txt'
+  const testFolder = 'assignment/';
+fs.writeFile(filename,dateObj.toString(),(err)=>{
+    console.log("completed writing")
+    
+})
+fs.readdirSync(folderPath).forEach(file => {
+    console.log(file);
+  });
+  app.get('/', function(req, res) {
+    
+    res.sendFile( path.resolve('assignment/2022-3-15-1650004935225.txt') );
+    //res.sendFile(path.resolve(__dirname,'./assignment'));
+ });
+
+
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
