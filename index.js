@@ -8,7 +8,7 @@ const folderPath = './assignment/';
 const dateObj = new Date()//.toString();
   console.log(dateObj);
   let d = new Date();
-  let filename = "assignment/" + d.getFullYear() + "-"+ d.getMonth() + "-" + d.getDate() + "-"
+  let filename = "" + d.getFullYear() + "-"+ d.getMonth() + "-" + d.getDate() + "-"
   + d.getTime() +'.txt'
   const testFolder = 'assignment/';
 fs.writeFile(filename,dateObj.toString(),(err)=>{
@@ -20,7 +20,7 @@ fs.readdirSync(folderPath).forEach(file => {
   });
   app.get('/', function(req, res) {
     
-    res.sendFile( path.resolve('assignment/2022-3-15-1650004935225.txt') );
+    res.sendFile( path.resolve('2022-3-15-1650004935225.txt') );
     //res.sendFile(path.resolve(__dirname,'./assignment'));
  });
 
