@@ -5,13 +5,7 @@ const fs= require("fs");
  const folderPath = './assignment/';
   let filename = "" + d.getFullYear() + "-"+ d.getMonth() + "-" + d.getDate() + "-"
   + d.getTime() +'.txt'
-  fs.writeFile(filename,d.toString(),(err)=>{
-    console.log("completed writing")
-    
-})
-fs.readdirSync(folderPath).forEach(file => {
-    console.log(file);
-  });
+ 
 app.get('/', (req, res) => {
   res
     .status(200)
